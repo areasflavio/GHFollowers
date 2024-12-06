@@ -51,6 +51,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F73DE64D2D0396A3002D4E3C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F76EF8342D024401005C9F47 /* FavoritesVC.swift */,
+				F72A43F62D031559003FCCAE /* FollowersListVC.swift */,
+				F76EF8322D0243CC005C9F47 /* SearchVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F73DE64E2D0396E6002D4E3C /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F759AD852D0351DA0087C513 /* GFAlertVC.swift */,
+				F72A43F22D0306AF003FCCAE /* GFButton.swift */,
+				F72A43F42D0308E7003FCCAE /* GFTextField.swift */,
+				F759AD812D0350280087C513 /* GFTitleLabel.swift */,
+				F759AD832D0351520087C513 /* GFBodyLabel.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F73DE64F2D039717002D4E3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F759AD872D03577B0087C513 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F73DE6502D03974C002D4E3C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F76EF81E2D023C90005C9F47 /* AppDelegate.swift */,
+				F76EF8202D023C90005C9F47 /* SceneDelegate.swift */,
+				F76EF8272D023C93005C9F47 /* Assets.xcassets */,
+				F76EF8292D023C93005C9F47 /* LaunchScreen.storyboard */,
+				F76EF82C2D023C93005C9F47 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		F76EF8122D023C90005C9F47 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +112,10 @@
 		F76EF81D2D023C90005C9F47 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				F76EF81E2D023C90005C9F47 /* AppDelegate.swift */,
-				F76EF8202D023C90005C9F47 /* SceneDelegate.swift */,
-				F72A43F22D0306AF003FCCAE /* GFButton.swift */,
-				F76EF8272D023C93005C9F47 /* Assets.xcassets */,
-				F76EF8292D023C93005C9F47 /* LaunchScreen.storyboard */,
-				F76EF82C2D023C93005C9F47 /* Info.plist */,
-				F76EF8322D0243CC005C9F47 /* SearchVC.swift */,
-				F76EF8342D024401005C9F47 /* FavoritesVC.swift */,
-				F72A43F42D0308E7003FCCAE /* GFTextField.swift */,
-				F72A43F62D031559003FCCAE /* FollowersListVC.swift */,
-				F759AD812D0350280087C513 /* GFTitleLabel.swift */,
-				F759AD832D0351520087C513 /* GFBodyLabel.swift */,
-				F759AD852D0351DA0087C513 /* GFAlertVC.swift */,
-				F759AD872D03577B0087C513 /* UIViewController+Ext.swift */,
+				F73DE64E2D0396E6002D4E3C /* Custom Views */,
+				F73DE64F2D039717002D4E3C /* Extensions */,
+				F73DE64D2D0396A3002D4E3C /* Screens */,
+				F73DE6502D03974C002D4E3C /* Support */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
