@@ -23,7 +23,7 @@
 		F76EF82B2D023C93005C9F47 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F76EF82A2D023C93005C9F47 /* Base */; };
 		F76EF8332D0243CC005C9F47 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76EF8322D0243CC005C9F47 /* SearchVC.swift */; };
 		F76EF8352D024401005C9F47 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76EF8342D024401005C9F47 /* FavoritesVC.swift */; };
-		F79A26E92D04943A00607EBC /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A26E82D04943A00607EBC /* ErrorMessage.swift */; };
+		F79A26E92D04943A00607EBC /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A26E82D04943A00607EBC /* GFError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		F76EF82C2D023C93005C9F47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F76EF8322D0243CC005C9F47 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		F76EF8342D024401005C9F47 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
-		F79A26E82D04943A00607EBC /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		F79A26E82D04943A00607EBC /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,7 @@
 		F79A26E72D04942400607EBC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F79A26E82D04943A00607EBC /* ErrorMessage.swift */,
+				F79A26E82D04943A00607EBC /* GFError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 				F759AD882D03577B0087C513 /* UIViewController+Ext.swift in Sources */,
 				F72A43F32D0306AF003FCCAE /* GFButton.swift in Sources */,
 				F759AD862D0351DA0087C513 /* GFAlertVC.swift in Sources */,
-				F79A26E92D04943A00607EBC /* ErrorMessage.swift in Sources */,
+				F79A26E92D04943A00607EBC /* GFError.swift in Sources */,
 				F759AD842D0351520087C513 /* GFBodyLabel.swift in Sources */,
 				F73DE6532D039989002D4E3C /* Follower.swift in Sources */,
 				F759AD822D0350280087C513 /* GFTitleLabel.swift in Sources */,
