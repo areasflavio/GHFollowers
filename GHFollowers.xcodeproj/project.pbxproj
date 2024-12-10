@@ -32,6 +32,7 @@
 		F79A26EE2D0498BF00607EBC /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A26ED2D0498BF00607EBC /* GFAvatarImageView.swift */; };
 		F79A26F02D04BC4300607EBC /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A26EF2D04BC4300607EBC /* UIHelper.swift */; };
 		F79A26F82D04CE7000607EBC /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A26F72D04CE7000607EBC /* GFEmptyStateView.swift */; };
+		F7C660362D08663D00012A3D /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C660352D08663D00012A3D /* GFItemInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		F79A26ED2D0498BF00607EBC /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		F79A26EF2D04BC4300607EBC /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		F79A26F72D04CE7000607EBC /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
+		F7C660352D08663D00012A3D /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F79A26F72D04CE7000607EBC /* GFEmptyStateView.swift */,
+				F7C660352D08663D00012A3D /* GFItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				F79A26EE2D0498BF00607EBC /* GFAvatarImageView.swift in Sources */,
 				F72A43F32D0306AF003FCCAE /* GFButton.swift in Sources */,
 				F759AD862D0351DA0087C513 /* GFAlertVC.swift in Sources */,
+				F7C660362D08663D00012A3D /* GFItemInfoView.swift in Sources */,
 				F79A26EC2D04983A00607EBC /* FollowerCell.swift in Sources */,
 				F79A26E92D04943A00607EBC /* GFError.swift in Sources */,
 				F77DE72F2D0710DF00D57B8F /* GFUserInfoHeaderVC.swift in Sources */,
