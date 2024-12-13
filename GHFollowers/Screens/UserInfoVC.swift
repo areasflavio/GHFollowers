@@ -127,7 +127,6 @@ extension UserInfoVC: GFRepoItemVCDelegate {
         
         presentSafariVC(with: url)
     }
-    
 }
 
 extension UserInfoVC: GFFollowerItemVCDelegate {
@@ -138,6 +137,5 @@ extension UserInfoVC: GFFollowerItemVCDelegate {
         }
         delegate.didRequestFollowers(for: user.login)
         dismissVC()
-    }
-    
+    }    
 }

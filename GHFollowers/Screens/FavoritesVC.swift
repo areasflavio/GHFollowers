@@ -42,22 +42,12 @@ class FavoritesVC: GFDataLoadingVC {
     }
     
     func getFavorites() {
-        
         PersistenceManager.retrieveFavorites { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let favorites):
-                if favorites.isEmpty {
-                    self.showEmptyStateView(with: "No Favorites?\nAdd on on the follower screen", in: self.view)
-                    return
-                }
-                
-                self.favorites = favorites
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.view.bringSubviewToFront(self.tableView)
-                }
+                self.updateUI(with: favorites)
                 break
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -65,7 +55,19 @@ class FavoritesVC: GFDataLoadingVC {
             }
         }
     }
-
+    
+    func updateUI(with favorites: [Follower]) {
+        if favorites.isEmpty {
+            self.showEmptyStateView(with: "No Favorites?\nAdd on on the follower screen", in: self.view)
+            return
+        }
+        
+        self.favorites = favorites
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.view.bringSubviewToFront(self.tableView)
+        }
+    }
 }
 
 extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
@@ -101,6 +103,5 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
             
             self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
-    }
-    
+    }    
 }
