@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F70241812D0B752800312B54 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70241802D0B752800312B54 /* GFDataLoadingVC.swift */; };
 		F7090F112D04DFC5000193F3 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7090F102D04DFC5000193F3 /* UserInfoVC.swift */; };
+		F7136A0F2D0C5BF000D10359 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7136A0E2D0C5BF000D10359 /* UIView+Ext.swift */; };
 		F72A43F32D0306AF003FCCAE /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A43F22D0306AF003FCCAE /* GFButton.swift */; };
 		F72A43F52D0308E7003FCCAE /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A43F42D0308E7003FCCAE /* GFTextField.swift */; };
 		F72A43F72D031559003FCCAE /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72A43F62D031559003FCCAE /* FollowersListVC.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		F70241802D0B752800312B54 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
 		F7090F102D04DFC5000193F3 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		F7136A0E2D0C5BF000D10359 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F72A43F22D0306AF003FCCAE /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		F72A43F42D0308E7003FCCAE /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		F72A43F62D031559003FCCAE /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				F759AD872D03577B0087C513 /* UIViewController+Ext.swift */,
 				F7C361082D08DAA800520C47 /* Date+Ext.swift */,
+				F7136A0E2D0C5BF000D10359 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7136A0F2D0C5BF000D10359 /* UIView+Ext.swift in Sources */,
 				F73DE6552D0399EC002D4E3C /* User.swift in Sources */,
 				F72A43F52D0308E7003FCCAE /* GFTextField.swift in Sources */,
 				F72A43F72D031559003FCCAE /* FollowersListVC.swift in Sources */,
