@@ -98,6 +98,7 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
             guard let error = error else {
                 self.favorites.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .left)
+                self.updateUI(with: self.favorites)
                 return
             }
             
