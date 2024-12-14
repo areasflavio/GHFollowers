@@ -43,7 +43,7 @@ class FavoritesVC: GFDataLoadingVC {
     
     func getFavorites() {
         PersistenceManager.retrieveFavorites { [weak self] result in
-            guard let self = self else { return }
+            guard let self else { return }
             
             switch result {
             case .success(let favorites):
@@ -94,8 +94,8 @@ extension FavoritesVC: UITableViewDataSource, UITableViewDelegate {
         
         
         PersistenceManager.updatedWith(favorite: favorites[indexPath.row], actionType: .remove) { [weak self] error in
-            guard let self = self else { return }
-            guard let error = error else {
+            guard let self else { return }
+            guard let error else {
                 self.favorites.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .left)
                 self.updateUI(with: self.favorites)
