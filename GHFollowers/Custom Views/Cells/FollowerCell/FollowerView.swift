@@ -16,7 +16,7 @@ struct FollowerView: View {
             AsyncImage(url: URL(string: follower.avatarUrl)) { image in
                 image.resizable().aspectRatio(contentMode: .fit)
             } placeholder: {
-                Image("avatar-placeholder").resizable().aspectRatio(contentMode: .fit)
+                Image(.avatarPlaceholder).resizable().aspectRatio(contentMode: .fit)
             }
             .clipShape(.circle)
             

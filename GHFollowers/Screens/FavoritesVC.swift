@@ -23,6 +23,18 @@ class FavoritesVC: GFDataLoadingVC {
         getFavorites()
     }
     
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if favorites.isEmpty {
+            var config = UIContentUnavailableConfiguration.empty()
+            config.image = UIImage(systemName: "star")
+            config.text = "No favorites"
+            config.secondaryText = "Add a favorite on the followers list screen"
+            contentUnavailableConfiguration = config
+        } else {
+            contentUnavailableConfiguration = nil
+        }
+    }
+    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         title = "Favorites"
@@ -57,12 +69,13 @@ class FavoritesVC: GFDataLoadingVC {
     }
     
     func updateUI(with favorites: [Follower]) {
-        if favorites.isEmpty {
-            self.showEmptyStateView(with: "No Favorites?\nAdd on on the follower screen", in: self.view)
-            return
-        }
+//        if favorites.isEmpty {
+//            self.showEmptyStateView(with: "No Favorites?\nAdd on on the follower screen", in: self.view)
+//            return
+//        }
         
         self.favorites = favorites
+        setNeedsUpdateContentUnavailableConfiguration()
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.view.bringSubviewToFront(self.tableView)

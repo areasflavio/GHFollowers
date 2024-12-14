@@ -48,6 +48,20 @@ class FollowersListVC: GFDataLoadingVC {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if followers.isEmpty && !isLoadingMoreFollowers {
+            var config = UIContentUnavailableConfiguration.empty()
+            config.image = UIImage(systemName: "person.slash")
+            config.text = "No followers"
+            config.secondaryText = "This user doesn't have any followers. Go follow them 😀"
+            contentUnavailableConfiguration = config
+        } else if isSearching && filteredFollowers.isEmpty {
+            contentUnavailableConfiguration = UIContentUnavailableConfiguration.search()
+        } else {
+            contentUnavailableConfiguration = nil
+        }
+    }
+    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -80,12 +94,16 @@ class FollowersListVC: GFDataLoadingVC {
             do {
                 let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
                 updateUI(with: followers)
+                dismissLoadingView()
+                isLoadingMoreFollowers = false
             } catch {
                 if let gfError = error as? GFError {
                     presentGFAlert(title: "Bad Stuff Happend", message: gfError.rawValue, buttonTitle: "Ok")
                 } else {
                     presentDefaultError()
                 }
+                dismissLoadingView()
+                isLoadingMoreFollowers = false
             }
             
 //            guard let followers = try? await NetworkManager.shared.getFollowers(for: username, page: page) else {
@@ -93,13 +111,10 @@ class FollowersListVC: GFDataLoadingVC {
 //                dismissLoadingView()
 //                return
 //            }
-//            
+//
 //            updateUI(with: followers)
 //            dismissLoadingView()
         }
-
-        dismissLoadingView()
-        isLoadingMoreFollowers = false
         
 //        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
 //            guard let self = self else { return }
@@ -123,13 +138,14 @@ class FollowersListVC: GFDataLoadingVC {
         if followers.count < 100 { self.hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
         
-        if self.followers.isEmpty {
-            let message = "This user doesn't have any followers. Go follow them 😀"
-            DispatchQueue.main.async {
-                self.showEmptyStateView(with: message, in: self.view)
-            }
-            return
-        }
+        setNeedsUpdateContentUnavailableConfiguration()
+//        if self.followers.isEmpty {
+//            let message = "This user doesn't have any followers. Go follow them 😀"
+//            DispatchQueue.main.async {
+//                self.showEmptyStateView(with: message, in: self.view)
+//            }
+//            return
+//        }
         
         self.updateData(on: self.followers)
     }
@@ -158,16 +174,17 @@ class FollowersListVC: GFDataLoadingVC {
             do {
                 let user = try await NetworkManager.shared.getUserInfo(for: username)
                 addUserToFavorites(user: user)
+                dismissLoadingView()
             } catch {
                 if let gfError = error as? GFError {
                     presentGFAlert(title: "Something went wrong", message: gfError.rawValue, buttonTitle: "Ok")
                 } else {
                     presentDefaultError()
                 }
+                dismissLoadingView()
             }
         }
         
-        dismissLoadingView()
         
 //        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
 //            guard let self = self else { return }
@@ -233,6 +250,7 @@ extension FollowersListVC: UISearchResultsUpdating {
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredFollowers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 }
 
